@@ -1,0 +1,126 @@
+.cart-wrapper{
+  min-height: 75svh;
+}
+.cart-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: var(--sp-m);
+}
+.cart-item{
+  display: flex;
+  gap: var(--sp-s);
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid var(--c-t);
+  max-width: 400px;
+}
+.cart-item-img-wrapper{
+  width: 150px;
+  height: 150px;
+  padding: var(--sp-s);
+}
+.cart-item-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  box-shadow: var(--bx-s-1);
+}
+.cart-item-desc{
+  padding: var(--sp-s) 0;
+}
+.item-quant-and-remove{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-m);
+}
+.cart-item-remove-btn{
+  padding: 10px;
+  border-radius: var(--br-10);
+  background-color: var(--c-s);
+  cursor: pointer;
+  transition: var(--transition-3);
+}
+.cart-item-remove-btn:active{
+  scale: 0.95;
+}
+.cart-item-remove i{
+  font-size: var(--fs-l);
+  color: var(--c-w);
+}
+.cart-itmem-name,
+.cart-item-price{
+  font-weight: var(--fw-7);
+}
+
+
+/*! payments */
+.cart-items-price-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: var(--sp-m);
+  padding: var(--sp-s);
+}
+
+.summery-header{
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-7);
+}
+.sub-total{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--c-t);
+  padding-bottom: var(--sp-s);
+}
+.sub-total-price{
+  font-size: var(--fs-l);
+  font-weight: var(--fw-7);
+}
+.cart-btns{
+  display: grid;
+  gap: var(--sp-s);
+}
+.cart-btn{
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .cart-item-img-wrapper{
+    width: 100px;
+    height: 100px;
+  }
+  .cart-item-desc-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .cart-item-desc{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: var(--fs-s);
+    color: var(--c-t);
+  }
+  .cart-itmem-name,
+  .cart-item-price{
+    font-size: var(--fs-m);
+  }
+  .cart-quant{
+    font-size: var(--fs-s);
+    border-radius: var(--br-10);
+    display: grid;
+    place-items: center;
+    max-height: 30px;
+    max-width: 50px;
+  }
+  .cart-item-remove{
+    text-align: left;
+  }
+  .cart-items-price-wrapper{
+    width: 100%;
+  }
+}

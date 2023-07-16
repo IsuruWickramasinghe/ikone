@@ -1,0 +1,132 @@
+/*! NAV BAR */
+.nav-bar{
+  background-color: var(--c-p);
+  width: 100svw;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+}
+.nav-toggle{
+  color: var(--c-w);
+  font-size: var(--fs-xl);
+  padding: var(--sp-s);
+  display: none;
+}
+.nav-bar-left-section,
+.nav-bar-right-section{
+  display: flex;
+  align-items: center;
+}
+
+/*! left section  */
+.nav-bar-left-section{
+  gap: var(--sp-xl);
+}
+.logo-wrapper{
+  width: 150px;
+  height: var(--nav-h);
+  padding: var(--sp-s);
+}
+.logo{
+  width: 100%;
+  height: 100%;
+}
+.nav-links-wrapper{
+  width: auto;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-bg);
+}
+.nav-link {
+  width: 150px;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-l);
+  color: var(--c-t);
+  font-weight: var(--fw-7);
+  position: relative;
+  overflow: hidden  ;
+}
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 2px;
+  background-color: black;
+  left: -150px;
+  bottom: 0;
+  transition: var(--transition-3);
+}
+.nav-link:hover::before {
+  left: 0;
+}
+.nav-bar .nav-bar-left-section .active::before{
+  left: 0;
+}
+
+/*! right section  */
+.nav-bar-right-section{
+  width: 100px;
+  height: var(--nav-h);
+  justify-content: space-evenly;
+}
+.nav-link-cart{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.nav-link-profile{
+  color: var(--c-w);
+  padding: 0 var(--sp-m);
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .nav-bar-left-section{
+    gap: var(--sp-s);
+  }
+  .logo-wrapper{
+    height: auto;
+    padding: var(--sp-s);
+  }
+  .nav-link {
+    font-size: var(--fs-m);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav-bar-left-section{
+    gap: var(--sp-s);
+  }
+  .nav-links-wrapper{
+    position: absolute;
+    z-index: 10;
+    flex-direction: column;
+    background-color: var(--c-p);
+    left: -100%;
+    top: calc(var(--nav-h));
+    width: 90svw;
+    height: calc(100vh - 50px);
+    justify-content: flex-start;
+    transition: var(--transition-5);
+  }
+  .nav-link{
+    color: var(--c-w);
+    width: 100%;
+  }
+  .nav-toggle{
+    display: block;
+  }
+  .nav-bar .nav-bar-left-section .active::before{
+    background-color: var(--c-w);
+    width: 150%;
+  }
+}

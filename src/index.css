@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+:root {
+  /* font family */
+  --f-lato: 'Quicksand', sans-serif;
+
+  /* font sizes */
+  --fs-xxl: 32px;
+  --fs-xl: 24px;
+  --fs-l: 16px;
+  --fs-m: 14px;
+  --fs-s: 10px;
+  --fs-xs: 8px;
+
+  /* font weight */
+  --fw-7: 700;
+  --fw-4: 400;
+
+  /* spacing */
+  --sp-xl: 100px;
+  --sp-l: 50px;
+  --sp-m: 25px;
+  --sp-s: 10px;
+
+  /* transition */
+  --transition-3: all .3s;
+  --transition-5: all .5s;
+  
+  /* colors */
+  --c-p: #000000;
+  --c-s: #222831;
+  --c-t: #393E46;
+  --c-w: #FFFFFF;
+  --c-bg: #EEEEEE;
+
+  /* hav bar height */
+  --nav-h: 50px;
+
+  /* border radius */
+  --br-5: 5px;
+  --br-10: 10px;
+  --br-20: 20px;
+
+  /* box shadow */
+  --bx-s-1: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  --bx-s-2: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+}
+*{
+  box-sizing: border-box;
+  font-family: var(--f-lato);
+  /* outline: auto blue; */
+}
+html,
+body{
+  margin: 0;
+  padding: 0;
+  transition: var(--transition-5);
+}
+a{
+  text-decoration: none;
+  color: var(--c-w);
+  font-family: var(--f-lato);
+}
+.left-0{
+  left: 0;
+  overflow: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+ul li{
+  list-style: none;
+}
