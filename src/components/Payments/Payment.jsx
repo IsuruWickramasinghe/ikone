@@ -14,7 +14,7 @@ function Payment({button_name}) {
       const stripe = await getStripe();
 
       try {
-        const response = await axios.post('/create-checkout-session', {
+        const response = await axios.post('https://ikone-server.onrender.com/create-checkout-session', {
           mode: 'no-cors',
           method: 'POST',
           headers: {

@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
   server: {
     proxy: {
-      '/create-checkout-session': 'https://theikone.netlify.app/',
+      '/create-checkout-session': 'https://ikone-server.onrender.com/',
     },
   },
   base: "/",
