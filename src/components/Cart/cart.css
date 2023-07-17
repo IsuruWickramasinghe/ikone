@@ -60,7 +60,8 @@
 .cart-items-price-wrapper{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  max-width: 500px;
+  width: 100%;
   gap: var(--sp-m);
   padding: var(--sp-s);
 }

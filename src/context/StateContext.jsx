@@ -5,7 +5,6 @@ import { auth, db } from '../config/firebase';
 
 import { doc, getDoc, setDoc, collection } from 'firebase/firestore';
 
-
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
@@ -28,6 +27,24 @@ export const StateContext = ({ children }) => {
 
   let foundProduct;
 
+
+  // Loaging screen
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); 
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const [loadingComps,setLoadingComps] = useState(false)
+  const handleCompLoading = () => {
+    setLoadingComps(true)
+    const timer = setTimeout(()=>{
+      setLoadingComps(false)
+    }, 2000);
+    return () => clearTimeout(timer);
+  }
 
 
 
@@ -254,7 +271,10 @@ export const StateContext = ({ children }) => {
         handleUserAddress,
         selectedSize,
         setSelectedSize,
-        handleUserPurchaseHistory
+        handleUserPurchaseHistory,
+        loading,
+        loadingComps,
+        handleCompLoading
       }}
     >
       {children}

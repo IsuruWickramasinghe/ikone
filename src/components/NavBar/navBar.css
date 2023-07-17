@@ -23,12 +23,12 @@
 
 /*! left section  */
 .nav-bar-left-section{
-  gap: var(--sp-xl);
+  gap: var(--sp-l);
 }
 .logo-wrapper{
-  width: 150px;
+  width: 200px;
   height: var(--nav-h);
-  padding: var(--sp-s);
+  padding: 0 0 0 var(--sp-l);
 }
 .logo{
   width: 100%;
@@ -40,26 +40,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--c-bg);
+  background-color: var(--c-p);
 }
 .nav-link {
-  width: 150px;
+  width: 100px;
   height: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--fs-l);
-  color: var(--c-t);
-  font-weight: var(--fw-7);
+  color: var(--c-w);
+  font-weight: var(--fw-4);
   position: relative;
   overflow: hidden  ;
 }
 .nav-link::before {
   content: "";
   position: absolute;
-  width: 150px;
-  height: 2px;
-  background-color: black;
+  width: 100px;
+  height: 5px;
+  background-color: var(--c-bg);
   left: -150px;
   bottom: 0;
   transition: var(--transition-3);
@@ -100,6 +100,10 @@
   .nav-link {
     font-size: var(--fs-m);
   }
+  .logo-wrapper{
+    width: 200px;
+    padding: 0 0 0 var(--sp-l);
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -118,6 +122,10 @@
     justify-content: flex-start;
     transition: var(--transition-5);
   }
+  .logo-wrapper{
+    width: 150px;
+    padding: var(--sp-s);
+  }
   .nav-link{
     color: var(--c-w);
     width: 100%;
@@ -128,5 +136,8 @@
   .nav-bar .nav-bar-left-section .active::before{
     background-color: var(--c-w);
     width: 150%;
+  }
+  .nav-link::before {
+    height: 1px;
   }
 }

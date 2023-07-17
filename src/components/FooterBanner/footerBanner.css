@@ -1,6 +1,7 @@
 .footer-banner{
   background-color: var(--c-p);
   max-width: 1366px;
+  width: 100%;
   height: auto;
   border-radius: var(--br-20);
   padding: var(--sp-m);

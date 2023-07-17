@@ -4,6 +4,8 @@ import client from '../lib/client'
 
 import ProductsSection from '../components/ProductsSection/ProductsSection';
 
+import { useStateContext } from '../context/StateContext';
+
 
 function ProductsPage({gender}) {
 
@@ -11,6 +13,9 @@ function ProductsPage({gender}) {
   const [filteredCategories,setFilteredCategories] = useState([])
   const [filteredProducts,setFilteredProducts] = useState([])
   const [selectedCategory,setSelectedCategory] = useState("all")
+
+  const { handleCompLoading } = useStateContext()
+
 
 
   const handleSelectedCategory = (category) => {
@@ -33,6 +38,7 @@ function ProductsPage({gender}) {
     (currentGender == gender)? "" : setSelectedCategory("all")
     setCurrentGender(gender)
     productsFetch()
+    handleCompLoading()
   }, [gender,selectedCategory])
 
 

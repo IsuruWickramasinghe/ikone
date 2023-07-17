@@ -6,6 +6,8 @@ import HeroSection from '../components/HeroSection/HeroSection'
 import BestSelling from '../components/BestSelling/BestSelling'
 import NewCollection from '../components/NewCollection/NewCollection'
 import IkoneFooterBanner from '../components/FooterBanner/IkoneFooterBanner'
+import HomeBanner from '../components/HomeBanner/HomeBanner' 
+
 
 function HomePage() {
 
@@ -42,6 +44,10 @@ function HomePage() {
 
   return (
     <div className='home-page'>
+      {/* home banner */}
+      <div className="home-banner">
+        <HomeBanner />
+      </div>
       {/* hero section */}
       <div className="hero-section">
         <HeroSection saleBanners={ saleBanner } heroBanners={ heroBanners }/>

@@ -17,6 +17,7 @@ import SingleProduct from './components/SingleProduct/SingleProduct'
 import SuccessPayment from './pages/SuccessPayment'
 import Page404 from './pages/Page404'
 
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="*" element={<Page404 />} />
           </Routes>
       </Layout>
+      <ScrollToTop />
     </div>
   )
 }
