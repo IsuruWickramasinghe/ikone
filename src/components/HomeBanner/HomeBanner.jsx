@@ -1,35 +1,10 @@
-import React, { useEffect,useState } from 'react'
-
-import client from '../../lib/client'
+import React from 'react'
 import { urlFor } from '../../lib/client'
 
-function HomeBanner() {
-
-
-  const [homeBanner, setHomeBanner] = useState([])
-
-  useEffect(()=>{
-    const fetchData = async () =>{
-      try {
-        const queryHomeBanner = '*[_type == "home_banner"]';
-        const docsHomeBanner = await client.fetch(queryHomeBanner)
-        setHomeBanner(docsHomeBanner)
-      } catch (error) {
-        console.log(error.message)
-      }
-    }
-    fetchData()
-  }, [])
-
-
-
-
-
-
-
+function HomeBanner({homeBanner}) {
 
   return (
-    <div>
+    <>
       <div className="home-banner-wrapper">
         {
           homeBanner && homeBanner.map((bnr,i)=>[
@@ -38,7 +13,7 @@ function HomeBanner() {
           ])
         }
       </div>
-    </div>
+    </>
 
   )
 }

@@ -5,7 +5,7 @@ import './productsSection.css'
 import { Link } from "react-router-dom";
 import { urlFor } from '../../lib/client';
 
-import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import LoadingScreenInside from '../LoadingScreen/LoadingScreenInside';
 
 import { useStateContext } from '../../context/StateContext';
 
@@ -19,7 +19,7 @@ function ProductsSection({productsSnaps}) {
       {
         (loadingComps) ?
           <div className='loading-screen-1'>
-            <LoadingScreen />
+            <LoadingScreenInside />
           </div>
          :
           <>

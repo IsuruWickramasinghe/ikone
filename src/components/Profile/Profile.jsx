@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './profile.css';
 
@@ -11,14 +11,14 @@ import { useNavigate } from 'react-router-dom';
 
 import { useStateContext } from '../../context/StateContext';
 
-import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import LoadingScreenInside from '../LoadingScreen/LoadingScreenInside';
 
 
 function Profile() {
 
   const navigate = useNavigate();
   
-  const { user, userFormData, userAddressForm, handleUserData, handleUserAddress, loadingComps, handleCompLoading } = useStateContext()
+  const { user, userAddressForm, userFormData, handleUserData, handleUserAddress } = useStateContext()
 
   // sign out
   const signOutUser = async () => {
@@ -32,121 +32,113 @@ function Profile() {
       });
   };
 
-  useEffect(()=>{
-    handleCompLoading()
-  },[])
-
   // check user
-  if (!user) {
-    return null; // Render a loading state or redirect to a login page
+  if ((!user && !userAddressForm)) {
+
+    return (
+      <div className="loading-screen-1">
+        <LoadingScreenInside />
+      </div>
+    ); // Render a loading state or redirect to a login page
   }
 
   return (
     <div className="profile-page">
-      
-      {(loadingComps)? 
-      (
-        <div className='loading-screen-1'>
-          <LoadingScreen />
+
+
+      {/* user details */}
+      <div className="profile-details">
+        <div className="profile-title">User Details</div>
+        {/* user profile */}
+        {user ? (
+          <div className="user-profile-img">
+            <img className="user-pro-pic" src={user.photoURL} alt="profile photo"/>
+          </div>
+        ) : null}
+        <form action="submit" onSubmit={handleUserData} id="userDocForm">
+          {/* user name */}
+          <div className="profile-data-field">
+            <input
+              required
+              type="text"
+              name="userName"
+              id="userName"
+              placeholder="User Name"
+              defaultValue={userFormData?.userName || ''}
+            />
+          </div>
+          {/* email */}
+          <div className="profile-data-field">
+            <input
+              type="email"
+              name="userEmail"
+              id="userEmail"
+              placeholder="Email"
+              disabled
+              defaultValue={user?.email}
+            />
+          </div>
+          {/* mobile number */}
+          <div className="profile-data-field">
+            <input
+              required
+              type="number"
+              name="userPhone"
+              id="userPhone"
+              placeholder="Phone"
+              defaultValue={userFormData?.userPhone || ''}
+            />
+          </div>
+          {/* submit btn */}
+          <div className="user-details-submit-btn">
+            <button className="btn-buy-black">Save Changes</button>
+          </div>
+        </form>
+        <div className="sign-out-btn-wrapper">
+          <button onClick={signOutUser} className="sign-out-btn btn-buy-white">
+            SIGN OUT
+          </button>
         </div>
-      ) : 
-      (
-        <>
-          {/* user details */}
-          <div className="profile-details">
-            <div className="profile-title">User Details</div>
-            {/* user profile */}
-            {user ? (
-              <div className="user-profile-img">
-                <img className="user-pro-pic" src={user.photoURL} alt="profile photo"/>
-              </div>
-            ) : null}
+      </div>
 
-            <form action="submit" onSubmit={handleUserData} id="userDocForm">
-              {/* user name */}
-              <div className="profile-data-field">
-                <input
-                  required
-                  type="text"
-                  name="userName"
-                  id="userName"
-                  placeholder="User Name"
-                  defaultValue={userFormData?.userName || ''}
-                />
-              </div>
-              {/* email */}
-              <div className="profile-data-field">
-                <input
-                  type="email"
-                  name="userEmail"
-                  id="userEmail"
-                  placeholder="Email"
-                  disabled
-                  defaultValue={user?.email}
-                />
-              </div>
-              {/* mobile number */}
-              <div className="profile-data-field">
-                <input
-                  required
-                  type="number"
-                  name="userPhone"
-                  id="userPhone"
-                  placeholder="Phone"
-                  defaultValue={userFormData?.userPhone || ''}
-                />
-              </div>
-              {/* submit btn */}
-              <div className="user-details-submit-btn">
-                <button className="btn-buy-black">Save Changes</button>
-              </div>
-            </form>
-            <div className="sign-out-btn-wrapper">
-              <button onClick={signOutUser} className="sign-out-btn btn-buy-white">
-                SIGN OUT
-              </button>
-            </div>
+
+      {/* address */}
+      <div className="shipping-address">
+        <div className="profile-title">
+            User Address
+        </div>
+        <form action="submit" onSubmit={handleUserAddress} id='userAddressForm'>
+          {/* country */}
+          <div className="profile-data-field">
+            <input required type="text" name='userCountry' id='userCountry' placeholder='Country' defaultValue={userAddressForm?.userCountry || ''}/>
           </div>
-
-
-          {/* address */}
-          <div className="shipping-address">
-            <div className="profile-title">
-                User Address
-            </div>
-            <form action="submit" onSubmit={handleUserAddress} id='userAddressForm'>
-              {/* country */}
-              <div className="profile-data-field">
-                <input required type="text" name='userCountry' id='userCountry' placeholder='Country' defaultValue={userAddressForm?.userCountry || ''}/>
-              </div>
-              {/* full name */}
-              <div className="profile-data-field">
-                <input required type="text" name='userFullName' id='userFullName' placeholder='Full Name' defaultValue={userAddressForm?.userFullName || ''}/>
-              </div>
-              {/* Address */}
-              <div className="profile-data-field">
-                <input required type="text" name='userAddress' id='userAddress' placeholder='Address' defaultValue={userAddressForm?.userAddress || ''}/>
-              </div>
-              {/* city */}
-              <div className="profile-data-field">
-                <input required type="text" name='userCity' id='userCity' placeholder='City' defaultValue={userAddressForm?.userCity || ''}/>
-              </div>
-              {/* postal code */}
-              <div className="profile-data-field">
-                <input required type="text" name='userPostalCode' id='userPostalCode' placeholder='Postal Code' defaultValue={userAddressForm?.userPostalCode || ''}/>
-              </div>
-              {/* phone */}
-              <div className="profile-data-field">
-                <input required type="number" name='userPhone' id='userPhone' placeholder='Phone' defaultValue={userAddressForm?.userPhone || ''}/>
-              </div>
-              {/* submit btn */}
-              <div className="user-details-submit-btn">
-                <button className='btn-buy-black'>save changes</button>
-              </div>
-            </form>
+          {/* full name */}
+          <div className="profile-data-field">
+            <input required type="text" name='userFullName' id='userFullName' placeholder='Full Name' defaultValue={userAddressForm?.userFullName || ''}/>
           </div>
-        </>
-      )}
+          {/* Address */}
+          <div className="profile-data-field">
+            <input required type="text" name='userAddress' id='userAddress' placeholder='Address' defaultValue={userAddressForm?.userAddress || ''}/>
+          </div>
+          {/* city */}
+          <div className="profile-data-field">
+            <input required type="text" name='userCity' id='userCity' placeholder='City' defaultValue={userAddressForm?.userCity || ''}/>
+          </div>
+          {/* postal code */}
+          <div className="profile-data-field">
+            <input required type="text" name='userPostalCode' id='userPostalCode' placeholder='Postal Code' defaultValue={userAddressForm?.userPostalCode || ''}/>
+          </div>
+          {/* phone */}
+          <div className="profile-data-field">
+            <input required type="number" name='userPhone' id='userPhone' placeholder='Phone' defaultValue={userAddressForm?.userPhone || ''}/>
+          </div>
+          {/* submit btn */}
+          <div className="user-details-submit-btn">
+            <button className='btn-buy-black'>save changes</button>
+          </div>
+        </form>
+      </div>
+
 
     </div>
   );

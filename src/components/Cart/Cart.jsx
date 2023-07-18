@@ -3,7 +3,6 @@ import React, { useRef } from 'react'
 import './cart.css'
 
 import { Link } from 'react-router-dom'
-import toast from 'react-hot-toast'
 
 import { useStateContext } from '../../context/StateContext'
 import { urlFor } from '../../lib/client'

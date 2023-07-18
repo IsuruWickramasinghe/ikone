@@ -17,6 +17,10 @@
   box-shadow: var(--bx-s-2);
   border-radius: var(--br-10);
   transition: var(--transition-3);
+  cursor: pointer;
+}
+.login-btn:hover{
+  background-color: var(--c-bg);
 }
 .login-btn:active{
   scale: 0.95;

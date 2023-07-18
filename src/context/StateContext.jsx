@@ -28,28 +28,6 @@ export const StateContext = ({ children }) => {
   let foundProduct;
 
 
-  // Loaging screen
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false); 
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const [loadingComps,setLoadingComps] = useState(false)
-  const handleCompLoading = () => {
-    setLoadingComps(true)
-    const timer = setTimeout(()=>{
-      setLoadingComps(false)
-    }, 2000);
-    return () => clearTimeout(timer);
-  }
-
-
-
-
-
   // handle user
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
@@ -272,9 +250,6 @@ export const StateContext = ({ children }) => {
         selectedSize,
         setSelectedSize,
         handleUserPurchaseHistory,
-        loading,
-        loadingComps,
-        handleCompLoading
       }}
     >
       {children}

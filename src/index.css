@@ -68,7 +68,6 @@ a{
   overflow: hidden;
 }
 body::-webkit-scrollbar {
-  display: none;
 }
 ul li{
   list-style: none;

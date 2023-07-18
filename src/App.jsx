@@ -36,7 +36,7 @@ function App() {
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/collections/:productId" element={<SingleProduct />} />
-            <Route path="/success" element={<SuccessPayment />} />
+            <Route path="/payemt?success=true" element={<SuccessPayment />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
       </Layout>

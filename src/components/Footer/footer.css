@@ -1,7 +1,10 @@
 .footer{
+  width: 100%;
   display: flex;
   gap: var(--sp-xl);
+  padding: var(--sp-s);
   height: 300px;
+  background-color: var(--c-p);
 }
 
 /*! footer menu */
