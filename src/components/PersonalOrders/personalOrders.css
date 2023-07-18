@@ -1,0 +1,99 @@
+.my-order-container{
+  min-height: 100svh;
+}
+.my-orders-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--sp-s);
+}
+.my-order-card{
+  display: flex;
+  gap: var(--sp-s);
+  padding: var(--sp-s);
+  box-shadow: var(--bx-s-1);
+  border-radius: var(--br-10);
+  width: 300px;
+  height: auto;
+  justify-content: center;
+  align-items: start;
+  transition: var(--transition-5);
+}
+.my-order-card:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.my-order-image{
+  width: 150px;
+  height: 150px;
+}
+.my-order-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.my-order-desc{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-s);
+}
+.my-order-title{
+  font-size: var(--fs-l);
+  font-weight: var(--fw-7);
+}
+.my-order-quntities-and-price{
+  font-size: var(--fs-m);
+}
+.my-order-pending{
+  width: 150px;
+  background-color: rgb(236, 236, 236);
+  font-size: small;
+  color: var(--c-t);
+  padding: 0 0 0 var(--sp-s);
+}
+.my-order-shipped{
+  width: 150px;
+  font-size: small;
+  background-color: rgb(255, 190, 105);
+  padding: 0 0 0 var(--sp-s);
+}
+.my-order-confirmed{
+  width: 150px;
+  font-size: small;
+  background-color: rgb(105, 255, 125);
+  padding: 0 0 0 var(--sp-s);
+}
+.my-order-btns{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  gap: var(--sp-s);
+}
+.my-order-btns button{
+  border-radius: var(--br-10);
+  width: 100%;
+  border: none;
+  padding: 5px 0;
+  color: var(--c-w);
+  background-color: var(--c-p);
+  transition: var(--transition-3);
+  border: 1px solid var(--c-p);
+  cursor: pointer;
+}
+.my-order-btns button:active{
+  scale: 0.95;
+}
+.my-order-btns div:not(:first-child) button{
+  color: var(--c-p);
+  background-color: var(--c-w);
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .my-order-card{
+    width: 100%;
+  }
+}

@@ -35,7 +35,7 @@ function SignIn() {
   }, []);
 
   if (shouldNavigate) {
-    return <Navigate to="/profile" />;
+    return <Navigate to="/account/profile" />;
   }
 
   return (

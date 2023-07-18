@@ -1,9 +1,9 @@
+
 import React from 'react'
 import ReactLoading from 'react-loading';
 import ikone from '../../assets/logo.svg'
 
-
-function LoadingScreenInside() {
+function LoadingScreen() {
   return (
     <>
       <ReactLoading type={'spinningBubbles'} color={'#fff'} height={32} width={32} />
@@ -12,4 +12,4 @@ function LoadingScreenInside() {
   )
 }
 
-export default LoadingScreenInside
+export default LoadingScreen

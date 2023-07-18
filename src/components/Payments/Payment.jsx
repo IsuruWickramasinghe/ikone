@@ -14,7 +14,7 @@ function Payment({button_name}) {
       const stripe = await getStripe();
 
       try {
-        const response = await axios.post('https://ikone-server.onrender.com/create-checkout-session', {
+        const response = await axios.post('/create-checkout-session', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ function Payment({button_name}) {
       toast(
         "Please sign up before making payments. ",
         {
-          duration: 6000,
+          duration: 5000,
         }
       );
     }

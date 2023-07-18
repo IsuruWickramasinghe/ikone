@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import './profile.css';
 
@@ -10,9 +10,6 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 import { useStateContext } from '../../context/StateContext';
-
-import LoadingScreenInside from '../LoadingScreen/LoadingScreenInside';
-
 
 function Profile() {
 
@@ -32,19 +29,8 @@ function Profile() {
       });
   };
 
-  // check user
-  if ((!user && !userAddressForm)) {
-
-    return (
-      <div className="loading-screen-1">
-        <LoadingScreenInside />
-      </div>
-    ); // Render a loading state or redirect to a login page
-  }
-
   return (
     <div className="profile-page">
-
 
       {/* user details */}
       <div className="profile-details">
@@ -100,7 +86,6 @@ function Profile() {
           </button>
         </div>
       </div>
-
 
       {/* address */}
       <div className="shipping-address">

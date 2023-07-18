@@ -12,7 +12,9 @@ import ProductsPage from './pages/ProductsPage'
 
 import Cart from './components/Cart/Cart'
 import SignIn from './components/SignIn/SignIn'
+import ProfilePage from './pages/ProfilePage'
 import Profile from './components/Profile/Profile'
+import PersonalOrders from './components/PersonalOrders/PersonalOrders'
 import SingleProduct from './components/SingleProduct/SingleProduct'
 import SuccessPayment from './pages/SuccessPayment'
 import Page404 from './pages/Page404'
@@ -34,9 +36,12 @@ function App() {
             </Route>
             <Route path="/cart" element={<Cart />} />
             <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/account" element={<ProfilePage />} >
+              <Route path='profile' element={<Profile />} />
+              <Route path='orders' element={<PersonalOrders />} />
+            </Route>
             <Route path="/collections/:productId" element={<SingleProduct />} />
-            <Route path="/payemt?success=true" element={<SuccessPayment />} />
+            <Route path="/payment-success" element={<SuccessPayment />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
       </Layout>

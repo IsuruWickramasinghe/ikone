@@ -21,6 +21,9 @@
   font-weight: var(--fw-7);
   letter-spacing: 2px;
 }
+
+
+
 /* loading sceen */
 .loading-screen{
   width: 100svw;
@@ -42,6 +45,9 @@
   justify-content: center;
   padding-top: 100px;
 }
+
+
+
 
 /* home banner */
 .home-banner{
@@ -279,6 +285,54 @@
 }
 
 
+/*! ========== ACCOUNT PAGE ========== */
+.account-page{
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-m);
+}
+.account-page-links-wrapper{
+  display: flex;
+  gap: var(--sp-m);
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--c-t);
+  padding-bottom: var(--sp-m);
+}
+.account-page-link{
+  color: var(--c-t);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-7);
+  padding: var(--sp-s);
+  position: relative;
+  width: 150px;
+  text-align: center;
+  overflow: hidden;
+}
+.account-page-link::before{
+  content: "";
+  position: absolute;
+  background-color: var(--c-t);
+  width: 150px;
+  height: 2px;
+  z-index: 1;
+  left: -100%;
+  bottom: 0;
+  transition: var(--transition-5);
+}
+.account-page-link:hover::before{
+  left: 0;
+}
+.account-page-links-wrapper .active::before{
+  left: 0;
+}
+
+
+
+
+
+
+
 /** ========== SUCCESS ========== */
 .success-wrapper{
   width: 100%;
@@ -291,9 +345,11 @@
 /* ========== MAIN PADDING ========== */
 .products-page,
 .single-product,
+.account-page,
 .single-product-container,
 .cart-wrapper,
 .profile-page,
-.sign-in{
+.sign-in,
+.page-404{
   padding: var(--sp-s);
 }

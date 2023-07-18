@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 import { auth, db } from '../config/firebase';
 
-import { doc, getDoc, setDoc, collection } from 'firebase/firestore';
+import { doc, getDoc, getDocs, setDoc, collection } from 'firebase/firestore';
 
 const Context = createContext();
 
@@ -23,6 +23,7 @@ export const StateContext = ({ children }) => {
   const [user, setUser] = useState(null);
   const [userFormData, setUserFormData] = useState({});
   const [userAddressForm,setUserAddressFrom] = useState({});
+  const [userOrderHistory,setUserOrderHistory] = useState([])
   const [selectedSize,setSelectedSize] = useState('')
 
   let foundProduct;
@@ -43,18 +44,46 @@ export const StateContext = ({ children }) => {
   // get user data
   const getUserData = async (currentUser) => {
     try {
+
+      // user order history
+      const userOrdersSheet = [];
+      const getDataUserOrderHistory = await getDocs(collection(db, 'ikoneUsers', currentUser.uid, 'userPurchases'));
+      getDataUserOrderHistory.forEach((userOrderDoc)=>{
+        userOrdersSheet.push({
+          id: userOrderDoc.id,
+          data: userOrderDoc.data()
+        })
+      })
+      setUserOrderHistory(userOrdersSheet);
+
+
+
+
+
+
+
+      // user data
       const getDataSnap = await getDoc(doc(db, 'ikoneUsers', currentUser.uid));
       if (getDataSnap.exists()) {
         setUserFormData(getDataSnap.data());
       }
+  
+      // user address
       const getAddressSnap = await getDoc(doc(db, 'ikoneUsersAddress', currentUser.uid));
       if (getAddressSnap.exists()) {
         setUserAddressFrom(getAddressSnap.data());
       }
+  
+
+
+
+
+
     } catch (error) {
       console.log(error)
     }
-  };  
+  };
+  
   // update user data
   const handleUserData = async (e) => {
     e.preventDefault();
@@ -91,7 +120,6 @@ export const StateContext = ({ children }) => {
       toast.error('Check again');
     }
   }
-
   // update user purchase history
   const handleUserPurchaseHistory = async () => {
     if(user){
@@ -245,8 +273,10 @@ export const StateContext = ({ children }) => {
         user,
         userFormData,
         userAddressForm,
+        userOrderHistory,
         handleUserData,
         handleUserAddress,
+        setUserOrderHistory,
         selectedSize,
         setSelectedSize,
         handleUserPurchaseHistory,
