@@ -15,9 +15,11 @@ function HeroSection({saleBanners,heroBanners}) {
     <>
       {/* discount cards */}
       {saleBanners && saleBanners?.map((data, index) => (
-        <div className="discount-cards" key={index}>
+        <div 
+        className="discount-cards" key={index} >
           {/* current discount */}
-          <div className="current-discount">
+          <div className="current-discount"
+          >
             <div>
                <img src={HeroIcon} alt="heroicon" className="hero-icon" />
               <p className="heading">{data.header}</p>
@@ -46,11 +48,14 @@ function HeroSection({saleBanners,heroBanners}) {
           </div>
         </div>
       ))}
-      {/* hero product banner */}
-        
+
+      {/* hero product banner */}  
       {heroBanners &&
         heroBanners.map((bnrs, index) => (
-          <div className="hero-product-banners" key={index}>
+          <div className="hero-product-banners" key={index}
+          data-aos-duration="1000"
+          data-aos="fade-up"
+          >
             <Carousel 
               showThumbs={false}
               showStatus={false}

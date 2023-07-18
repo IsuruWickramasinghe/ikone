@@ -24,7 +24,11 @@ function ProductsSection({productsSnaps}) {
          :
           <>
           {productsSnaps && productsSnaps?.map((item,index) => (
-            <div className="product-card" key={index}>
+            <div className="product-card" 
+            key={index}
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            >
               {/* {console.log(item)} */}
               <div className="product-img">
                 <Link to={`/collections/${item && item.slug.current}`}>

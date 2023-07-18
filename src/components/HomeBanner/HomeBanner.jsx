@@ -5,7 +5,10 @@ function HomeBanner({homeBanner}) {
 
   return (
     <>
-      <div className="home-banner-wrapper">
+      <div
+        data-aos="zoom-out-down"
+        data-aos-duration="1000"
+        className="home-banner-wrapper">
         {
           homeBanner && homeBanner.map((bnr,i)=>[
             // console.log(bnr.banner)

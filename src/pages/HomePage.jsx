@@ -72,19 +72,31 @@ function HomePage() {
       </div>
     <div className="home-page">
       {/* hero section */}
-      <div className="hero-section">
+      <div className="hero-section"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
         <HeroSection saleBanners={saleBanner} heroBanners={heroBanners} />
       </div>
       {/* best selling */}
-      <div className="best-selling">
+      <div className="best-selling"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         <BestSelling bestSelling={bestSelling} />
       </div>
       {/* new collection */}
-      <div className="new-collection">
+      <div className="new-collection"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
         <NewCollection newCollection={newCollection} />
       </div>
       {/* banner */}
-      <div className="footer-banner">
+      <div className="footer-banner"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      >
         <IkoneFooterBanner />
       </div>
     </div>

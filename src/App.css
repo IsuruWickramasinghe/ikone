@@ -36,7 +36,7 @@
   z-index: 10;
 }
 .loading-screen-1{
-  min-height: 60svh;;
+  min-height: 100svh;;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -271,7 +271,7 @@
   gap: var(--sp-s);
 }
 .all-products{
-  min-height: 60svh;
+  min-height: 100svh;
   padding: var(--sp-s);
   display: flex;
   flex-wrap: wrap;
