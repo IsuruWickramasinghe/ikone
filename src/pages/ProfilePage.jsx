@@ -9,14 +9,13 @@ import LoadingScreenInside from '../components/LoadingScreen/LoadingScreenInside
 function ProfilePage() {
 
   const { userFormData, userAddressForm, userOrderHistory, user } = useStateContext()
-  
   const [ isProfileLoad,setIsProfileLoad ] = useState(true)
 
   useEffect(() => {
 
     setIsProfileLoad(true);
   
-    if (Object.keys(userFormData).length !== 0 && Object.keys(userAddressForm).length !== 0 && userOrderHistory.length) {
+    if (Object.keys(userFormData).length !== 0 && Object.keys(userAddressForm).length !== 0 && userOrderHistory.length !== 0 || user ) {
       setIsProfileLoad(false);
     }
 
