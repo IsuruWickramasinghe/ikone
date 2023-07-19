@@ -18,8 +18,7 @@ function HeroSection({saleBanners,heroBanners}) {
         <div 
         className="discount-cards" key={index} >
           {/* current discount */}
-          <div className="current-discount"
-          >
+          <div className="current-discount">
             <div>
                <img src={HeroIcon} alt="heroicon" className="hero-icon" />
               <p className="heading">{data.header}</p>
@@ -39,6 +38,7 @@ function HeroSection({saleBanners,heroBanners}) {
           </div>
           {/* up coming discount */}
           <div className="upcomming-event">
+          <img src={HeroIcon} alt="heroicon" className="hero-icon" />
             <div className="upcomming-event-header">
               Upcoming Event
             </div>
@@ -50,28 +50,33 @@ function HeroSection({saleBanners,heroBanners}) {
       ))}
 
       {/* hero product banner */}  
-      {heroBanners &&
-        heroBanners.map((bnrs, index) => (
-          <div className="hero-product-banners" key={index}
-          data-aos-duration="1000"
-          data-aos="fade-up"
-          >
-            <Carousel 
-              showThumbs={false}
-              showStatus={false}
-              infiniteLoop={true}
-              autoPlay={true}
-              stopOnHover={true}
-              swipeable={true}
-              emulateTouch={true}>
-              {bnrs.banner && bnrs.banner.map((bnr, i) => (
-                <div key={i}>
-                  <img src={urlFor(bnr)} alt="herobanner" className="hero-banner" />
-                </div>
-              ))}
-            </Carousel>
-          </div>
-        ))}
+      <div className="hero-banner-wrapper">
+
+        {/* banner one */}
+        {heroBanners &&
+          heroBanners.map((bnrs, index) => (
+            <div className="hero-product-banners" key={index}
+            data-aos-duration="1000"
+            data-aos="fade-up"
+            >
+              <Carousel 
+                showThumbs={false}
+                showStatus={false}
+                infiniteLoop={true}
+                autoPlay={true}
+                stopOnHover={true}
+                swipeable={true}
+                emulateTouch={true}>
+                {bnrs.banner && bnrs.banner.map((bnr, i) => (
+                  <div key={i}>
+                    <img src={urlFor(bnr)} alt="herobanner" className="hero-banner" />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+          ))}
+
+      </div>
         </>
   )
 }

@@ -73,7 +73,7 @@ function HomePage() {
     <div className="home-page">
       {/* hero section */}
       <div className="hero-section"
-        data-aos="fade-right"
+        data-aos="zoom-in"
         data-aos-duration="1000"
       >
         <HeroSection saleBanners={saleBanner} heroBanners={heroBanners} />
@@ -94,7 +94,7 @@ function HomePage() {
       </div>
       {/* banner */}
       <div className="footer-banner"
-        data-aos="fade-left"
+        data-aos="zoom-in"
         data-aos-duration="1000"
       >
         <IkoneFooterBanner />

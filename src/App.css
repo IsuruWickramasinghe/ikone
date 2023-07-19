@@ -173,7 +173,7 @@
   background-color: var(--c-p);
   border-radius: var(--br-20);
   color: var(--c-w);
-  width: 50%;
+  width: 100%;
   position: relative;
 }
 .hero-icon{
@@ -196,6 +196,8 @@
 
 /* * upcomming-event */
 .upcomming-event{
+  position: relative;
+  width: 100%;
   padding: var(--sp-m);
   background-color: var(--c-p);
   border-radius: var(--br-20);
@@ -214,10 +216,17 @@
 }
 
 /** hero banner */
+.hero-banner-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  width: 75%;
+  padding: var(--sp-s);
+  gap: var(--sp-l);
+}
 .hero-product-banners{
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 100%;
   height: auto;
 }
 .hero-banner{
@@ -232,9 +241,6 @@
     gap: var(--sp-m);
   }
   .discount-cards{
-    width: 100%;
-  }
-  .hero-product-banners{
     width: 100%;
   }
 }
@@ -261,8 +267,10 @@
   .current-discount{
     width: 100%;
   }
-  .hero-product-banners{
+  /* hero banners */
+  .hero-banner-wrapper{
     width: 100%;
+    flex-wrap: wrap;
   }
 }
 
