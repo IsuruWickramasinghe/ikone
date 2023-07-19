@@ -29,7 +29,7 @@ function Payment({button_name}) {
           toast.error("Invalid response")
           return;
         }
-        toast.loading('Redirecting...');
+        toast.success('Successfully redirecting to payment...');
         await stripe.redirectToCheckout({ sessionId: response.data.id });
         
       } catch (error) {

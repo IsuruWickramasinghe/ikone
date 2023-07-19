@@ -54,7 +54,7 @@ function HeroSection({saleBanners,heroBanners}) {
 
         {/* banner one */}
         {heroBanners &&
-          heroBanners.map((bnrs, index) => (
+          heroBanners?.map((bnrs, index) => (
             <div className="hero-product-banners" key={index}
             data-aos-duration="1000"
             data-aos="fade-up"
@@ -67,7 +67,7 @@ function HeroSection({saleBanners,heroBanners}) {
                 stopOnHover={true}
                 swipeable={true}
                 emulateTouch={true}>
-                {bnrs.banner && bnrs.banner.map((bnr, i) => (
+                {bnrs.banner && bnrs.banner?.map((bnr, i) => (
                   <div key={i}>
                     <img src={urlFor(bnr)} alt="herobanner" className="hero-banner" />
                   </div>
