@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 
 function Payment({button_name}) {
+  
   const { cartItems, user } = useStateContext();
 
   const handleCheckout = async () => {
