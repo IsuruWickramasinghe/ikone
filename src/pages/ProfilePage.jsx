@@ -15,7 +15,7 @@ function ProfilePage() {
 
     setIsProfileLoad(true);
   
-    if (Object.keys(userFormData).length !== 0 && Object.keys(userAddressForm).length !== 0 && userOrderHistory.length !== 0) {
+    if (Object.keys(userFormData).length !== 0 || Object.keys(userAddressForm).length !== 0 || userOrderHistory.length !== 0) {
       setIsProfileLoad(false);
     }
 
