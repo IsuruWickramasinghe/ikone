@@ -304,7 +304,6 @@
   gap: var(--sp-m);
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid var(--c-t);
   padding-bottom: var(--sp-m);
 }
 .account-page-link{
@@ -334,7 +333,14 @@
 .account-page-links-wrapper .active::before{
   left: 0;
 }
-
+@media screen and (max-width: 767px) {
+  .account-page-link{
+    font-size: var(--fs-m);
+  }
+  .account-page-link::before{
+    height: 1px;
+  }
+}
 
 
 

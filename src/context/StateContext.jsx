@@ -56,12 +56,6 @@ export const StateContext = ({ children }) => {
       })
       setUserOrderHistory(userOrdersSheet);
 
-
-
-
-
-
-
       // user data
       const getDataSnap = await getDoc(doc(db, 'ikoneUsers', currentUser.uid));
       if (getDataSnap.exists()) {
@@ -73,11 +67,6 @@ export const StateContext = ({ children }) => {
       if (getAddressSnap.exists()) {
         setUserAddressFrom(getAddressSnap.data());
       }
-  
-
-
-
-
 
     } catch (error) {
       console.log(error)
@@ -150,10 +139,6 @@ export const StateContext = ({ children }) => {
       }
     }
   };
-  
-
-
-
 
   // Add to cart or update cart
   const onAdd = (product, quantity) => {
@@ -161,8 +146,6 @@ export const StateContext = ({ children }) => {
 
     setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
-
-
 
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
@@ -190,10 +173,6 @@ export const StateContext = ({ children }) => {
     
   };
 
-
-
-
-
   // remove item from cart
   const onRemove = (product) => {
     foundProduct = cartItems.find((item) => item._id === product._id);
@@ -205,9 +184,6 @@ export const StateContext = ({ children }) => {
     toast.success(`${product.name} Removed`)
   }
 
-
-
-
   // set local storage
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -215,9 +191,6 @@ export const StateContext = ({ children }) => {
     localStorage.setItem('totalQuantities', totalQuantities);
   }, [cartItems, totalPrice, totalQuantities]);
 
-
-
-  
   // Quantities changers
   const changeQuantitiesMax = () => {
     setSelectedQuantities((prevSelectedQuantities) => prevSelectedQuantities + 1);
@@ -230,8 +203,6 @@ export const StateContext = ({ children }) => {
       return prevSelectedQuantities;
     });
   };
-
-
 
   // toggle cart item quantiity
   const toggleCartItemQuanitity = (id, value) => {
@@ -251,9 +222,6 @@ export const StateContext = ({ children }) => {
       }
     }
   }
-
-
-
 
   return (
     <Context.Provider

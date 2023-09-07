@@ -59,4 +59,7 @@
     width: 300px;
     border: 1px solid var(--c-t);
   }
+  .profile-title{
+    font-size: var(--fs-l);
+  }
 }
