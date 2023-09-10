@@ -14,15 +14,15 @@ function IkoneFooterBanner() {
       </div>
       <div className="footer-banner-social">
         {/* tiktok */}
-        <a href="http://" target="_blank" rel="noopener noreferrer">
+        <a href="http://www.tiktok.com/@__ikone__" target="_blank" rel="noopener noreferrer">
           <i className="ri-tiktok-fill"></i>
         </a>
         {/* insta */}
-        <a href="http://" target="_blank" rel="noopener noreferrer">
+        <a href="https://instagram.com/__ikone__?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener noreferrer">
           <i className="ri-instagram-line"></i>
         </a>
         {/* facebook */}
-        <a href="http://" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/profile.php?id=100089806471728&mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
           <i className="ri-facebook-fill"></i>
         </a>
       </div>
