@@ -84,7 +84,7 @@ function SingleProduct() {
             {/* discount */}
             {(product.discount)? 
             <div className="single-product-discount">
-              {`${product.discount}% OFF / LKR${product.price}.00`}
+              {`${product.discount}% OFF / LKR${parseInt(product.price / ( 1 - product.discount/100))}.00`}
             </div> : ""
             }
             {/* price */}

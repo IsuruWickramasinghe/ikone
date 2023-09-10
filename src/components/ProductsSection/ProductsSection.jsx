@@ -41,7 +41,7 @@ function ProductsSection({productsSnaps}) {
                   {/* Carnage Desire Oversize Tee - Vintage */}
                 </div>
                 <div className="product-discount">
-                  {(item.discount)? `${item.discount}% OFF / LKR${item.price}.00`  : "no special offers"}
+                  {(item.discount)? `${item.discount}% OFF / LKR${parseInt(item.price / ( 1 - item.discount/100))}.00`  : "no special offers"}
                 </div>
                 <div className="product-price">
                   {`LKR${item.price}.00`}

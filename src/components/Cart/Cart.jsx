@@ -47,7 +47,7 @@ function Cart() {
               <div className='cart-item-desc-wrapper'>
                 <div className="cart-item-desc">
                   <div className='cart-itmem-name'>{item.name}</div>
-                  {(item.discount)? <div className="cart-item-descount">{`${item.discount}% OFF / LKR${item.price}`}</div> : "" }
+                  {(item.discount)? <div className="cart-item-descount">{`${item.discount}% OFF / LKR${parseInt(item.price / ( 1 - item.discount/100))}`}</div> : "" }
                   <div className="cart-item-price">{`LKR${item.price}.00`}</div>
                 </div>
                 {/* item quant and remove */}
