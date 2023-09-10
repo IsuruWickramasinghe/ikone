@@ -136,6 +136,7 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .single-product-wrapper{
     flex-direction: column;
+    align-items: center;
     gap: var(--sp-m);
   }
 }
@@ -143,6 +144,7 @@
 @media screen and (max-width: 767px) {
   .single-product-wrapper{
     flex-direction: column;
+    align-items: center;
     gap: var(--sp-m);
   }
   .product-image{
