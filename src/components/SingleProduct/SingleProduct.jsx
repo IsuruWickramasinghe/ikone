@@ -131,8 +131,8 @@ function SingleProduct() {
             </div>
             {/* policys */}
             <div className="product-policys">
-                <Link className='product-policy-link'>privacy policy</Link>
-                <Link className='product-policy-link'>shipping policy</Link>
+                <Link to={'/privacy-policy'} className='product-policy-link'>privacy policy</Link>
+                <Link to={'/shipping-policy'} className='product-policy-link'>shipping policy</Link>
             </div>
             {/* hr tag */}
             <div className="hr-tag"></div>

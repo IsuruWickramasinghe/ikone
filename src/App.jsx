@@ -20,6 +20,10 @@ import SuccessPayment from './pages/SuccessPayment'
 import Page404 from './pages/Page404'
 
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import Shipping from './components/POLICY/Shipping'
+import Privacy from './components/POLICY/Privacy'
+import Terms from './components/POLICY/Terms'
+
 
 function App() {
 
@@ -42,6 +46,9 @@ function App() {
             </Route>
             <Route path="/collections/:productId" element={<SingleProduct />} />
             <Route path="/payment-success" element={<SuccessPayment />} />
+            <Route exact path="/shipping-policy" element={<Shipping />} />
+            <Route exact path="/privacy-policy" element={<Privacy />} />
+            <Route exact path="/terms-and-conditions" element={<Terms />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
       </Layout>

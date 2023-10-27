@@ -73,3 +73,8 @@ body::-webkit-scrollbar {
 ul li{
   list-style: none;
 }
+.shipping-policy,
+.privacy-policy,
+.terms{
+  padding: 20px;
+}
