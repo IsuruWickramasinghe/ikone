@@ -31,11 +31,11 @@ function HomePage() {
         const docsBanners = await client.fetch(queryBanners);
         setHeroBanners(docsBanners);
 
-        const queryBestSelling = '*[_type == "product" && is_best_selling == true]';
+        const queryBestSelling = '*[_type == "product" && is_best_selling == true && is_outof_stock == false]';
         const docsBestSelling = await client.fetch(queryBestSelling);
         setBestSelling(docsBestSelling);
 
-        const queryNewCollection = '*[_type == "product" && isNew == true]';
+        const queryNewCollection = '*[_type == "product" && isNew == true && is_outof_stock == false]';
         const docsNewCollection = await client.fetch(queryNewCollection);
         setNewCollection(docsNewCollection);
 

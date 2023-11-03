@@ -29,7 +29,7 @@ function ProductsPage({gender}) {
         const queryCategories = `*[_type == "product_categories" && product_gender == "${gender}"]`;
         const docsCategories = await client.fetch(queryCategories)
         setFilteredCategories(docsCategories)
-        const querySelectedProducts = (selectedCategory == "all")? `*[_type == "product" && gender == "${gender}"]` : `*[_type == "product" && gender == '${gender}' && (gender == '${gender}' && category == "${selectedCategory}")]`;
+        const querySelectedProducts = (selectedCategory == "all")? `*[_type == "product" && gender == "${gender}" && is_outof_stock == false ]` : `*[_type == "product" && gender == '${gender}' && is_outof_stock == false && (gender == '${gender}' && category == "${selectedCategory}")]`;
         const docsSelectedProducts = await client.fetch(querySelectedProducts)
         setFilteredProducts(docsSelectedProducts)
         setIsLoadingProductsPage(false)
