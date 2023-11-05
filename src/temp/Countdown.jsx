@@ -13,7 +13,7 @@ export default function Countdown({setEndDate}) {
         <img src={hero} alt="ikpne_hero" />
       </div>
       <div className="ikone-temp-countdown">
-        <TempCountDown setEndDate={setEndDate} targetDate={new Date('2023-11-12 10:00')}/>
+        <TempCountDown setEndDate={setEndDate} targetDate={new Date("2023-11-12T04:30:00.000Z")}/>
       </div>
     </div>
   )

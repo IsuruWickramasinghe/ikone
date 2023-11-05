@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function TempCountDown({ targetDate, setEndDate }) {
+function TempCountDown({ setEndDate, targetDate }) {
   const [countdown, setCountdown] = useState(getCountdown());
 
   useEffect(() => {
