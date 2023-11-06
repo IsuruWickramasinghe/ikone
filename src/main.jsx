@@ -9,7 +9,7 @@ import './index.css'
 import 'remixicon/fonts/remixicon.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import { StateContext } from './context/StateContext.jsx'
 
 AOS.init();
