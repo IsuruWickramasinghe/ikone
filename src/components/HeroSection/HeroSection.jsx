@@ -21,7 +21,7 @@ function HeroSection({saleBanners,heroBanners}) {
           <div className="current-discount">
             <div>
                <img src={HeroIcon} alt="heroicon" className="hero-icon" />
-              <p className="heading">{data.header}</p>
+              <h1 className="heading">{data.header}</h1>
               <div className="sale-countdown">
                  <CountDownTimer targetDate={new Date(data.sale_end)} />
               </div>

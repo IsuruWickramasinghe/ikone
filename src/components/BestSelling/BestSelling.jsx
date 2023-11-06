@@ -8,9 +8,9 @@ function BestSelling({bestSelling}) {
   return (
     <>
       {/* section header */}
-      <div className="section-header">
+      <h1 className="section-header">
         BEST SELLING
-      </div> 
+      </h1> 
       {/* product section */}
       <div className="product-section-wrapper">
           <ProductsSection productsSnaps={bestSelling}/>
