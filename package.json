@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "homepage": "https://theikone.com/",
+=======
+  "homepage": "https://www.theikone.com/",
+>>>>>>> f5f4551a8b5baf49aa09d60821009fbc2b003b3c
   "name": "ikone",
   "private": true,
   "version": "1.0.0",
