@@ -8,7 +8,6 @@ import { signInWithRedirect, GoogleAuthProvider } from 'firebase/auth';
 import { Link, Navigate } from 'react-router-dom';
 
 import googleIcon from '../../assets/google-icon.png';
-import { toast } from 'react-hot-toast';
 
 function SignIn() {
   const googleAuth = new GoogleAuthProvider();
@@ -17,7 +16,6 @@ function SignIn() {
   const signin = async () => {
     
     try {
-      toast.loading("Redirecting to google!")
       await signInWithRedirect(auth, googleAuth)
     } catch (error) {
       console.log(error.message);
