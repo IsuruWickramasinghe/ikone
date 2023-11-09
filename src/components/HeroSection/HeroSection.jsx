@@ -13,14 +13,13 @@ function HeroSection({saleBanners,heroBanners}) {
 
   return (
     <>
+    <div className="discount-cards-wrapper">
       {/* discount cards */}
       {saleBanners && saleBanners?.map((data, index) => (
-        <div 
-        className="discount-cards" key={index} >
+        <div className="discount-cards" key={index} >
           {/* current discount */}
           <div className="current-discount">
             <div>
-               <img src={HeroIcon} alt="heroicon" className="hero-icon" />
               <h1 className="heading">{data.header}</h1>
               <div className="sale-countdown">
                  <CountDownTimer targetDate={new Date(data.sale_end)} />
@@ -33,25 +32,20 @@ function HeroSection({saleBanners,heroBanners}) {
               </Link>
             </div>
             <div>
-              {data.sale_category && data.sale_category.title} {/* Accessing the title property of the sale_category */}
+              {data.sale_category && data.sale_category.title} 
             </div>
           </div>
-          {/* up coming discount */}
-          <div className="upcomming-event">
-          <img src={HeroIcon} alt="heroicon" className="hero-icon" />
-            <div className="upcomming-event-header">
-              Upcoming Event
-            </div>
-            <div className="upcomming-event-title">
-              {data.upcoming_event}
-            </div>
+          {/* discount image */}
+          <div className="dicount-img">
+            <img src={urlFor(data.sale_img)} alt="img"  width={100}/>
           </div>
         </div>
       ))}
+    </div>
+
 
       {/* hero product banner */}  
       <div className="hero-banner-wrapper">
-
         {/* banner one */}
         {heroBanners &&
           heroBanners?.map((bnrs, index) => (

@@ -12,7 +12,7 @@ function HomeBanner({homeBanner}) {
         {
           homeBanner && homeBanner.map((bnr,i)=>[
             // console.log(bnr.banner)
-            <img src={urlFor(bnr.banner)} alt="x" key={i} className='home-banner-img'/>
+            <img src={urlFor(bnr.banner)} alt="homebanner" key={i} className='home-banner-img'/>
           ])
         }
       </div>

@@ -13,7 +13,6 @@ function ProductsSection({productsSnaps}) {
 
   const { loadingComps } = useStateContext()
 
-
   return (
     <>
       {
