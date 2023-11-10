@@ -185,6 +185,7 @@
   background-color: var(--c-p);
   color: var(--c-w);
   width: 100%;
+  max-width: 350px;
 }
 .heading{
   font-size: var(--fs-xl);

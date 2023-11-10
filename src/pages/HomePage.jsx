@@ -9,50 +9,12 @@ import IkoneFooterBanner from '../components/FooterBanner/IkoneFooterBanner';
 import HomeBanner from '../components/HomeBanner/HomeBanner';
 import LoadingScreen from '../components/LoadingScreen/LoadingScreen';
 
+import { useStateContext } from '../context/StateContext';
+
 
 function HomePage() {
 
-  const [isLoadingHomePage, setIsLoadingHomePage] = useState(true);
-
-  const [saleBanner, setSaleBanner] = useState([]);
-  const [heroBanners, setHeroBanners] = useState([]);
-  const [bestSelling, setBestSelling] = useState([]);
-  const [newCollection, setNewCollection] = useState([]);
-  const [homeBanner, setHomeBanner] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const querySale = '*[_type == "hero_sale"]';
-        const docsSale = await client.fetch(querySale);
-        setSaleBanner(docsSale);
-
-        const queryBanners = '*[_type == "hero_banner"]';
-        const docsBanners = await client.fetch(queryBanners);
-        setHeroBanners(docsBanners);
-
-        const queryBestSelling = '*[_type == "product" && is_best_selling == true && is_outof_stock == false]';
-        const docsBestSelling = await client.fetch(queryBestSelling);
-        setBestSelling(docsBestSelling);
-
-        const queryNewCollection = '*[_type == "product" && isNew == true && is_outof_stock == false]';
-        const docsNewCollection = await client.fetch(queryNewCollection);
-        setNewCollection(docsNewCollection);
-
-        const queryHomeBanner = '*[_type == "home_banner"]';
-        const docsHomeBanner = await client.fetch(queryHomeBanner);
-        setHomeBanner(docsHomeBanner);
-
-        setIsLoadingHomePage(false); // Data fetching is completed, set isLoadingHomePage to false.
-      } catch (error) {
-        console.log(error.message);
-        setIsLoadingHomePage(true); // Error occurred, set isLoadingHomePage to false.
-      }
-    };
-
-    fetchData();
-  }, []);
-
+  const {isLoadingHomePage,saleBanner,heroBanners,bestSelling,newCollection,homeBanner} = useStateContext()
 
   if (isLoadingHomePage) {
     return (
