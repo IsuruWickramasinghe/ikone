@@ -43,7 +43,7 @@ function Footer() {
               <Link to='/terms-and-conditions'>TERMS AND CONDITIONS</Link>
             </li>
             <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer">CONTACT US</a>
+              <a href="https://instagram.com/__ikone__?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener noreferrer">CONTACT US</a>
             </li>
           </ul>
         </div>

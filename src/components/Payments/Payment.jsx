@@ -12,11 +12,10 @@ function Payment({button_name}) {
 
     if(user){
 
-      toast.loading('Processing...',{duration: 3000});
-
       const stripe = await getStripe();
+
       try {
-        const response = await axios.post('https://ikone-server.onrender.com/create-checkout-session', {
+        const response = await axios.post('/create-checkout-session', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -24,17 +23,17 @@ function Payment({button_name}) {
           cartItems,
           user
         });
+  
         if (!response.data || !response.data.id) {
-          // console.error('Invalid response:', response.data);
+          console.error('Invalid response:', response.data);
           toast.error("Invalid response")
           return;
         }
-        toast.success('Successfully redirecting to payment...',{duration: 3000});
+        toast.success('Successfully redirecting to payment...');
         await stripe.redirectToCheckout({ sessionId: response.data.id });
         
-        
       } catch (error) {
-        // console.error('Error creating checkout session:', error);
+        console.error('Error creating checkout session:', error);
         toast.error("Error creating checkout session")
       }
     }
