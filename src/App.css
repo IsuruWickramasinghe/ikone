@@ -161,26 +161,31 @@
   width: 100%;
   gap: var(--sp-m);
 }
+.discount-cards-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
 .discount-cards{
   display: flex;
+  align-items: center;
   gap: var(--sp-s);
-  width: 100%;
+  background-color: var(--c-p);
+  border-radius: var(--br-20);
+  overflow: hidden;
+}
+.dicount-img{
+  margin: 0 var(--sp-m) 0 0;
 }
 
 /** current discount  */
 .current-discount{
   padding: var(--sp-m);
   background-color: var(--c-p);
-  border-radius: var(--br-20);
   color: var(--c-w);
   width: 100%;
-  position: relative;
-}
-.hero-icon{
-  position: absolute;
-  width: 150px;
-  right: 20px;
-  bottom: 20px;
+  max-width: 350px;
 }
 .heading{
   font-size: var(--fs-xl);
@@ -191,27 +196,6 @@
   font-size: var(--fs-l);
   font-weight: var(--fw-4);
   padding-bottom: var(--sp-m);
-  letter-spacing: 2px;
-}
-
-/* * upcomming-event */
-.upcomming-event{
-  position: relative;
-  width: 100%;
-  padding: var(--sp-m);
-  background-color: var(--c-p);
-  border-radius: var(--br-20);
-  color: var(--c-w);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-s);
-}
-.upcomming-event-header{
-  font-size: var(--fs-m);
-  letter-spacing: 2px;
-}
-.upcomming-event-title{
-  font-size: var(--fs-xl);
   letter-spacing: 2px;
 }
 
@@ -240,32 +224,12 @@
   .hero-section{
     gap: var(--sp-m);
   }
-  .discount-cards{
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 767px) {
-  /* .home-page{
-    margin-top: var(--nav-h);
-  } */
-  .hero-icon{
-   width: 100px; 
-  }
   .sale-countdown{
     font-size: var(--fs-m);
     max-width: 300px;
-  }
-  .discount-cards{
-    display: flex;
-    flex-direction: column;
-    gap: var(--sp-s);
-    width: 100%;
-  }
-  
-  /** current discount  */
-  .current-discount{
-    width: 100%;
   }
   /* hero banners */
   .hero-banner-wrapper{
@@ -290,6 +254,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-s);
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 767px) {
+  .all-products{
+    align-content: flex-start;
+    justify-content: center;
+  }
 }
 
 

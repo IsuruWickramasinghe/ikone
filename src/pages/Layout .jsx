@@ -2,10 +2,9 @@
 import NavBar from '../components/NavBar/NavBar';
 import Footer from '../components/Footer/Footer';
 import Copyringt from '../components/CopyRights/Copyringt';
-import { useState } from 'react';
+
 import MainCountDown from '../Temp/MainCountDown';
-
-
+import { useState } from 'react';
 
 function Layout({ children }) {
 

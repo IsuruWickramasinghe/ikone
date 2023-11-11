@@ -46,7 +46,6 @@ function ProductsPage({gender}) {
   if(IsLoadingProductsPage){
     return(
       <div className="products-page">
-
         {/* product categories */}
         <div className="products-sub-categories-wrapper">
           {filteredCategories && filteredCategories?.map((categories)=>(

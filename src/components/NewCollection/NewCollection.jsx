@@ -6,9 +6,9 @@ function NewCollection({newCollection}) {
   return (
     <>
       {/* section header */}
-      <div className="section-header">
+      <h1 className="section-header">
         NEW ARRIVALS
-      </div> 
+      </h1> 
       {/* product section */}
       <div className="product-section-wrapper">
         <ProductsSection productsSnaps={newCollection}/>
