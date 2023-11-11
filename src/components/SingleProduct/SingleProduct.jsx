@@ -152,6 +152,14 @@ function SingleProduct() {
                 </ul>
               </div>
             </div>
+            {/* hr tag */}
+            <div className="hr-tag"></div>
+            <div className="size-chart">
+              <div className="product-dec-title">
+                SIZE CHART
+              </div>
+              {/* <a href={urlFor(product.size_chart)} target='_blank'><img src={urlFor(product.size_chart)} alt="size-chart" /></a> */}
+            </div>
           </div>
         </div>
       ))}

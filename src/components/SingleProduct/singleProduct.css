@@ -130,6 +130,14 @@
   list-style: disc;
   color: var(--c-t);
 }
+.size-chart{
+  width: 250px;
+  cursor: pointer;
+}
+.size-chart img{
+  width: 100%;
+  height: 100%;
+}
 
 
 

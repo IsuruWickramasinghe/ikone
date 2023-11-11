@@ -11,9 +11,7 @@ function Payment({button_name}) {
   const handleCheckout = async () => {
 
     if(user){
-
       toast.loading('Processing...',{duration: 3000});
-
       const stripe = await getStripe();
       try {
         const response = await axios.post('https://ikone-server.onrender.com/create-checkout-session', {
