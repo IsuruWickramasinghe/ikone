@@ -25,7 +25,7 @@ function Payment({button_name}) {
           user
         });
         if (!response.data || !response.data.id) {
-          console.error('Invalid response:', response.data);
+          // console.error('Invalid response:', response.data);
           toast.error("Invalid response")
           return;
         }
@@ -34,7 +34,7 @@ function Payment({button_name}) {
         
         
       } catch (error) {
-        console.error('Error creating checkout session:', error);
+        // console.error('Error creating checkout session:', error);
         toast.error("Error creating checkout session")
       }
     }

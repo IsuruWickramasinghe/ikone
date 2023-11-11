@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 function Layout({ children }) {
 
-  const [timerEnd,setTimerEnd] = useState(true)
+  const [timerEnd,setTimerEnd] = useState(false)
 
   if(!timerEnd){
     return(
