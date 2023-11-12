@@ -1,35 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 import { auth } from '../../config/firebase';
-
-import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, Navigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import { useStateContext } from '../../context/StateContext';
+
+
 
 function SignUp() {
+
+  const {loginHandler} = useStateContext()
+
   const [shouldNavigate, setShouldNavigate] = useState(false);
-
-  const [loginEmail,setLoginEmail] = useState("");
-  const [loginPass,setLoginPass] = useState("");
-
-
-  const signInWItEmail = async (e) => {
-    e.preventDefault()
-    try{
-      await createUserWithEmailAndPassword(auth, loginEmail, loginPass)
-      .then((userCredential) => {
-        toast.success("login successful")
-        console.log(userCredential)
-      })
-      .catch((error) => {
-        toast.error("error with signed up")
-        console.log(error)
-      });
-    }
-    catch(error){
-      console.log(error)
-    }
-  }
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -48,10 +29,24 @@ function SignUp() {
     <div className="sign-in">
       <h1>SIGN UP</h1>
       <div className="sign-in-btn-wrapper">
-        <form className="email-pass">
-          <input type="email" name="email"  placeholder='email' required onChange={e => setLoginEmail(e.target.value)}/>
-          <input type="password" name="password" placeholder='password' required onChange={e => setLoginPass(e.target.value)}/>
-          <input type="submit" value="SIGN UP" onClick={signInWItEmail}/>
+        <form className="email-pass" onSubmit={loginHandler} id="loginDocForm">
+          <input type="text" name="userName" placeholder='name' required />
+          <input type="email" name="userEmail"  placeholder='email' required />
+          <input
+            type="password"
+            name="userPassword"
+            placeholder="Password"
+            required
+            onInput={(e) => {
+              if (e.target.value.length < 6) {
+                e.target.setCustomValidity('Password must be at least 6 characters');
+              } else {
+                e.target.setCustomValidity('');
+              }
+            }}
+          />
+          <input type="number" name="userPhone" placeholder='phone' required />
+          <button className="btn-buy-black">SIGN UP</button>
         </form>
       </div>
       <div className="hr-tag"></div>

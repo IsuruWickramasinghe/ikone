@@ -36,14 +36,10 @@ function Profile() {
       <div className="profile-details">
         <div className="profile-title">User Details</div>
         {/* user profile */}
-        {/* {user ? (
-          <div className="user-profile-img">
-            <img className="user-pro-pic" src={user.photoURL} alt="profile photo"/>
-          </div>
-        ) : null} */}
         <form action="submit" onSubmit={handleUserData} id="userDocForm">
           {/* user name */}
           <div className="profile-data-field">
+          <label>User name</label>
             <input
               required
               type="text"
@@ -55,6 +51,7 @@ function Profile() {
           </div>
           {/* email */}
           <div className="profile-data-field">
+          <label>Email</label>
             <input
               type="email"
               name="userEmail"
@@ -64,8 +61,21 @@ function Profile() {
               defaultValue={user?.email}
             />
           </div>
+          {/* password */}
+          <div className="profile-data-field">
+            <label>Password</label>
+            <input
+              type="text"
+              name="userPassword"
+              id="userPassword"
+              placeholder="password"
+              disabled
+              defaultValue={userFormData?.userPassword || ''}
+            />
+          </div>
           {/* mobile number */}
           <div className="profile-data-field">
+          <label>Phone</label>
             <input
               required
               type="number"

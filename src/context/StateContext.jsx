@@ -3,9 +3,12 @@ import toast from 'react-hot-toast';
 
 import { auth, db } from '../config/firebase';
 
-import { doc, getDoc, getDocs, setDoc, collection } from 'firebase/firestore';
+import { doc, getDoc, getDocs, setDoc, collection, onSnapshot } from 'firebase/firestore';
 
 import client from '../lib/client';
+
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+
 
 const Context = createContext();
 
@@ -146,6 +149,39 @@ export const StateContext = ({ children }) => {
       toast.error('Check again');
     }
   };
+
+   // login handler
+  const loginHandler = async (e) => {
+    e.preventDefault();
+  
+    const dataSnap = {};
+    const userFormDoc = document.querySelector('#loginDocForm');
+    const userFormDocs = userFormDoc.querySelectorAll('input');
+    
+    userFormDocs.forEach((docUserForm) => {
+      dataSnap[docUserForm.name] = docUserForm.value;
+    });
+  
+    try {
+      // Create user with email and password
+      const userCredential = await createUserWithEmailAndPassword(auth, dataSnap.userEmail, dataSnap.userPassword);
+      toast.success('Login Successful');
+      // Save user details to Firestore
+      await setDoc(doc(db, 'ikoneUsers', userCredential.user.uid), dataSnap);
+      
+      toast.success('Details Successfully Saved!');
+      
+      // You might not need the recursive call, consider if it's necessary
+      // handleUserData(userCredential.user);
+    } catch (error) {
+      console.error(error);
+      toast.error('Error with sign-up or saving details. Please check again.');
+    }
+  };  
+
+
+
+
   // update user address
   const handleUserAddress = async (e) => {
     e.preventDefault();
@@ -309,6 +345,7 @@ export const StateContext = ({ children }) => {
         bestSelling,
         newCollection,
         homeBanner,
+        loginHandler
       }}
     >
       {children}
