@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
-import './signIn.css';
+import './signup.css';
 
 import { auth } from '../../config/firebase';
 
-import { signInWithRedirect, GoogleAuthProvider, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithRedirect, GoogleAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, Navigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 import googleIcon from '../../assets/google-icon.png';
 
-function SignIn() {
+function SignUp() {
   const googleAuth = new GoogleAuthProvider();
   const [shouldNavigate, setShouldNavigate] = useState(false);
 
@@ -32,7 +32,7 @@ function SignIn() {
   const signInWItEmail = async (e) => {
     e.preventDefault()
     try{
-      await signInWithEmailAndPassword(auth, loginEmail, loginPass)
+      await createUserWithEmailAndPassword(auth, loginEmail, loginPass)
       .then((userCredential) => {
         toast.loading("Redirecting!",{duration: 3000})
         console.log(userCredential)
@@ -62,7 +62,7 @@ function SignIn() {
 
   return (
     <div className="sign-in">
-      <h1>SIGN IN</h1>
+      <h1>SIGN UP</h1>
       <div className="sign-in-btn-wrapper">
         <form className="email-pass">
           <input type="email" name="email"  placeholder='email' required onChange={e => setLoginEmail(e.target.value)}/>
@@ -73,9 +73,6 @@ function SignIn() {
           <img src={googleIcon} alt="google-icon" className="login-icon" />
           <div className="login-text">Continue with Google</div>
         </button>
-      </div>
-      <div className="signUp">
-        <Link className='signup-btn' to={"/sign-up"}>SIGNUP</Link>
       </div>
       <div className="hr-tag"></div>
       <div className="policies">
@@ -90,4 +87,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;

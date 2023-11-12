@@ -36,11 +36,11 @@ function Profile() {
       <div className="profile-details">
         <div className="profile-title">User Details</div>
         {/* user profile */}
-        {user ? (
+        {/* {user ? (
           <div className="user-profile-img">
             <img className="user-pro-pic" src={user.photoURL} alt="profile photo"/>
           </div>
-        ) : null}
+        ) : null} */}
         <form action="submit" onSubmit={handleUserData} id="userDocForm">
           {/* user name */}
           <div className="profile-data-field">

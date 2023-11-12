@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import Cart from './components/Cart/Cart';
 import SignIn from './components/SignIn/SignIn';
+import SignUp from './components/signup/SignUp';
 import ProfilePage from './pages/ProfilePage';
 import Profile from './components/Profile/Profile';
 import PersonalOrders from './components/PersonalOrders/PersonalOrders';
@@ -36,6 +37,7 @@ function App() {
           </Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
           <Route path="/account" element={<ProfilePage />} >
             <Route path='profile' element={<Profile />} />
             <Route path='orders' element={<PersonalOrders />} />
