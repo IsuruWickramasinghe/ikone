@@ -53,11 +53,11 @@ function SignIn() {
         <form className="email-pass">
           <input type="email" name="email"  placeholder='email' required onChange={e => setLoginEmail(e.target.value)}/>
           <input type="password" name="password" placeholder='password' required onChange={e => setLoginPass(e.target.value)}/>
-          <input type="submit" value="SIGNIN" onClick={signInWItEmail}/>
+          <input type="submit" value="SIGN IN" onClick={signInWItEmail}/>
         </form>
       </div>
       <div className="signUp">
-        <Link className='signup-btn' to={"/sign-up"}>SIGNUP</Link>
+        <Link className='signup-btn' to={"/sign-up"}>Sign Up</Link>
       </div>
       <div className="hr-tag"></div>
       <div className="policies">

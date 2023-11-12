@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import './signup.css';
-
 import { auth } from '../../config/firebase';
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -53,7 +51,7 @@ function SignUp() {
         <form className="email-pass">
           <input type="email" name="email"  placeholder='email' required onChange={e => setLoginEmail(e.target.value)}/>
           <input type="password" name="password" placeholder='password' required onChange={e => setLoginPass(e.target.value)}/>
-          <input type="submit" value="SIGNIN" onClick={signInWItEmail}/>
+          <input type="submit" value="SIGN UP" onClick={signInWItEmail}/>
         </form>
       </div>
       <div className="hr-tag"></div>
