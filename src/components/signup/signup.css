@@ -35,8 +35,7 @@
   display: flex;
   gap: var(--sp-s);
 }
-.login-policy-link,
-.signup-btn{
+.login-policy-link{
   color: blue;
   text-decoration: underline;
   font-size: var(--fs-m);
