@@ -18,6 +18,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Shipping from './components/POLICY/Shipping';
 import Privacy from './components/POLICY/Privacy';
 import Terms from './components/POLICY/Terms';
+import PasswordReset from './components/PasswordReset/PasswordReset';
 
 function App() {
   const location = useLocation();
@@ -47,6 +48,7 @@ function App() {
           <Route exact path="/shipping-policy" element={<Shipping />} />
           <Route exact path="/privacy-policy" element={<Privacy />} />
           <Route exact path="/terms-and-conditions" element={<Terms />} />
+          <Route exact path="/reset-password" element={<PasswordReset />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         {!shouldDisplayScrollToTop && <ScrollToTop />}

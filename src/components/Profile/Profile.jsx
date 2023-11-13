@@ -7,7 +7,7 @@ import { auth } from '../../config/firebase';
 import { signOut } from 'firebase/auth';
 
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useStateContext } from '../../context/StateContext';
 
@@ -63,15 +63,7 @@ function Profile() {
           </div>
           {/* password */}
           <div className="profile-data-field">
-            <label>Password</label>
-            <input
-              type="text"
-              name="userPassword"
-              id="userPassword"
-              placeholder="password"
-              disabled
-              defaultValue={userFormData?.userPassword || ''}
-            />
+            <Link to={"/reset-password"} style={{color: 'blue',textDecoration: 'underline'}}>Reset Password</Link>
           </div>
           {/* mobile number */}
           <div className="profile-data-field">
