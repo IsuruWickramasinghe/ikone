@@ -24,8 +24,15 @@ function SignIn() {
         console.log(userCredential)
       })
       .catch((error) => {
-        toast.error("error with signed in")
-        console.log(error)
+        if(error.message === "Firebase: Error (auth/invalid-email)."){
+          toast.error("invalid email")
+        }
+        else if(error.message === "Firebase: Error (auth/wrong-password)."){
+          toast.error("wrong password")
+        }
+        else{
+          toast.error("check again")
+        }
       });
     }
     catch(error){
@@ -57,7 +64,10 @@ function SignIn() {
         </form>
       </div>
       <div className="signUp">
-        <Link className='signup-btn' to={"/sign-up"}>Sign Up</Link>
+        Don't have an account? <Link className='signup-btn' to={"/sign-up"}>Sign Up</Link>
+      </div>
+      <div className="signUp">
+        <Link className='signup-btn' to={"/reset-password"}>Forgot Password?</Link>
       </div>
       <div className="hr-tag"></div>
       <div className="policies">
