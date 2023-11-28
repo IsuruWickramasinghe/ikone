@@ -78,3 +78,38 @@ ul li{
 .terms{
   padding: 20px;
 }
+
+
+
+
+
+
+
+
+
+.maintain{
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+.maintain div{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #000000c2;
+  display: grid;
+  place-items: center;
+}
+.maintain div h1{
+  color: #FFF;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.maintain img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
