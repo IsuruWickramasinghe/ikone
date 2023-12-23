@@ -10,6 +10,7 @@ import HomeBanner from '../components/HomeBanner/HomeBanner';
 import LoadingScreen from '../components/LoadingScreen/LoadingScreen';
 
 import { useStateContext } from '../context/StateContext';
+import Chris from '../temp/Chris';
 
 
 function HomePage() {
@@ -30,38 +31,40 @@ function HomePage() {
 
       {/* home banner */}
       <div className="home-banner">
-        <HomeBanner homeBanner={homeBanner} />
+        {/* <HomeBanner homeBanner={homeBanner} /> */}
+        <Chris />
       </div>
-    <div className="home-page">
-      {/* hero section */}
-      <div className="hero-section"
-        data-aos="zoom-in"
-        data-aos-duration="1000"
-      >
-        <HeroSection saleBanners={saleBanner} heroBanners={heroBanners} />
+      <div className="home-page">
+        {/* hero section */}
+        <div className="hero-section"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          <HeroSection saleBanners={saleBanner} heroBanners={heroBanners} />
+        </div>
+        {/* best selling */}
+        <div className="best-selling"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          <BestSelling bestSelling={bestSelling} />
+        </div>
+        {/* new collection */}
+        <div className="new-collection"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          <NewCollection newCollection={newCollection} />
+        </div>
+        {/* banner */}
+        <div className="footer-banner"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          <IkoneFooterBanner />
+        </div>
       </div>
-      {/* best selling */}
-      <div className="best-selling"
-        data-aos="zoom-in"
-        data-aos-duration="1000"
-      >
-        <BestSelling bestSelling={bestSelling} />
-      </div>
-      {/* new collection */}
-      <div className="new-collection"
-        data-aos="zoom-in"
-        data-aos-duration="1000"
-      >
-        <NewCollection newCollection={newCollection} />
-      </div>
-      {/* banner */}
-      <div className="footer-banner"
-        data-aos="zoom-in"
-        data-aos-duration="1000"
-      >
-        <IkoneFooterBanner />
-      </div>
-    </div>
+
     </div>
   );
 }
