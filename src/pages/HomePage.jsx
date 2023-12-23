@@ -10,6 +10,7 @@ import HomeBanner from '../components/HomeBanner/HomeBanner';
 import LoadingScreen from '../components/LoadingScreen/LoadingScreen';
 
 import { useStateContext } from '../context/StateContext';
+import Chris from '../temp/Chris';
 
 
 function HomePage() {
@@ -30,7 +31,8 @@ function HomePage() {
 
       {/* home banner */}
       <div className="home-banner">
-        <HomeBanner homeBanner={homeBanner} />
+        {/* <HomeBanner homeBanner={homeBanner} /> */}
+        <Chris />
       </div>
     <div className="home-page">
       {/* hero section */}
