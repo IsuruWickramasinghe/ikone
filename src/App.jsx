@@ -44,7 +44,7 @@ function App() {
             <Route path='orders' element={<PersonalOrders />} />
           </Route>
           <Route path="/collections/:productId" element={<SingleProduct />} />
-          <Route path="/payment-success" element={<SuccessPayment />} />
+          <Route path="/payment-success/f83c2a85d972a89238f31296c63f0dbc-260ca9dd8a4577fc00b7bd5810298076" element={<SuccessPayment />} />
           <Route exact path="/shipping-policy" element={<Shipping />} />
           <Route exact path="/privacy-policy" element={<Privacy />} />
           <Route exact path="/terms-and-conditions" element={<Terms />} />
