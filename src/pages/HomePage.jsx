@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
-import client from '../lib/client';
+import React from 'react';
 
 import HeroSection from '../components/HeroSection/HeroSection';
 import BestSelling from '../components/BestSelling/BestSelling';
@@ -10,7 +8,6 @@ import HomeBanner from '../components/HomeBanner/HomeBanner';
 import LoadingScreen from '../components/LoadingScreen/LoadingScreen';
 
 import { useStateContext } from '../context/StateContext';
-import Chris from '../temp/Chris';
 
 
 function HomePage() {
@@ -31,8 +28,7 @@ function HomePage() {
 
       {/* home banner */}
       <div className="home-banner">
-        {/* <HomeBanner homeBanner={homeBanner} /> */}
-        <Chris />
+        <HomeBanner homeBanner={homeBanner} />
       </div>
       <div className="home-page">
         {/* hero section */}
